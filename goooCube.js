@@ -1,7 +1,7 @@
 const game = {
 
     canvas: undefined,
-    ctx: undefined,whidth: undefined, height: undefined
+    ctx: undefined,w: undefined, h: undefined
     FPS: 60,frames: 0,
 
     background: undefined,
@@ -47,12 +47,26 @@ const game = {
         },1000 / this.FPS)
 
         this.clear()
-        this.draw()
+        this.drawAll()
 
     }
+    reset(){
+
+        this.background = new background(this.ctx, this.w, this.h)
+        this.player = new player(this.ctx, this.w, this.h, this.keys)
+        
+    }
+
+
     clear(){
 
-        this.background = this.background(this.ctx, this.w, this.h)
+        this.ctx.clearRect(0,0, this.w, this.h)
+
+    }
+    drawAll(){
+
+        this.background.draw()
+        this.player.draw()
 
     }
 
