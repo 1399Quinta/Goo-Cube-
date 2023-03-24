@@ -50,6 +50,7 @@ class Game {
   };
 
   reset() {
+    //this.anotherGround = nwe AnotherGround(this.ctx,this.w,this.h);
     this.background = new Background(this.ctx, this.w, this.h);
     this.player = new Player(this.ctx, this.w, this.h, this.keys);
     this.ground = new Ground(this.ctx, this.w, this.h);
@@ -62,6 +63,7 @@ class Game {
   }
 
   drawAll() {
+    //his.anotherGround.draw();
     this.background.draw();
     this.ground.draw();
     this.yerba.draw();
