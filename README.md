@@ -12,4 +12,28 @@ In resumen , is a game  where you will need your response skills to the obstacle
 
 The player have to jump ( in this moment the canvas is broken).
 
+## Game.js
+
+class Game {
+  canvas= undefined;
+  ctx = undefined;
+  w = undefined;
+  h = undefined;
+  FPS = 60;
+  framesCounter = 0;
+
+  background = undefined;
+  player = undefined;
+  interval = undefined
+ 
+  init() 
+  setContext() 
+  setDimensions() 
+  start()
+  reset() 
+  clear() 
+  drawAll()
+  gameOver()
+ 
+
 
