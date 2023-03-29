@@ -13,8 +13,10 @@ class Game {
   //obstacles = [];
 
   keys = {
-    jumpR: 82,
-    actionG: 71,
+    //keys simbolicas
+    jumpR: "r",
+    actionG: "g",
+    acctionB: "b"
   };
   init() {
     this.setContext();
@@ -45,12 +47,13 @@ class Game {
 
       this.clear();
       this.drawAll();
+      this.gameOver();
 
     }, 1000 / this.FPS);
   };
 
   reset() {
-    //this.anotherGround = nwe AnotherGround(this.ctx,this.w,this.h);
+    this.anotherGround = new AnotherGround(this.ctx,this.w,this.h);
     this.background = new Background(this.ctx, this.w, this.h);
     this.player = new Player(this.ctx, this.w, this.h, this.keys);
     this.ground = new Ground(this.ctx, this.w, this.h);
@@ -63,11 +66,18 @@ class Game {
   }
 
   drawAll() {
-    //his.anotherGround.draw();
+    this.anotherGround.draw();
     this.background.draw();
     this.ground.draw();
     this.yerba.draw();
     //this.rocas.draw();
     this.player.draw(this.framesCounter);
+  }
+  gameOver(){
+    if( this.player.posY + this.player.h <= this.anotherGround.posY){
+      this.clear() ;
+      this.drawAll();
+    }
+
   }
 }

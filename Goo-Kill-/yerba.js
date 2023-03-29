@@ -1,14 +1,15 @@
 class Yerba {
-  constructor(ctx, w, h) {
+  constructor(ctx) {
     this.ctx = ctx;
-    this.w = w;
-    this.h = h;
+    this.imagW = this.imageW;
+    this.ImageH = this.ImageH;
 
     this.Image = new Image();
     this.Image.src = "./images/front_decor.png";
 
     this.posX = 0;
-    this.posY = 0;
+    this.posY = Background.ImageH + Ground.ImageH;
+    
   }
 
   draw() {

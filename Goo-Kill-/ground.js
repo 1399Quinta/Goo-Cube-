@@ -1,14 +1,14 @@
 class Ground {
-  constructor(ctx, posX, posY) {
+  constructor(ctx,) {
     this.ctx = ctx;
-    this.posX = posX;
-    this.posY = posY;
+    this.posX = 0;
+    this.posY = Background.imageH;
 
     this.image = new Image();
     this.image.src = "images/battleground.png";
 
     this.imageW= this.imageW
-    this.imageH =700;
+    this.imageH =400;
 
     this.velX = 4;
   }
@@ -34,7 +34,7 @@ class AnotherGround extends Ground {
       this.posY = 500,
 
       this.width = 4000,
-      this.height = 900,
+      this.height = 1000,
 
       //this.image() = new Image(''),
 

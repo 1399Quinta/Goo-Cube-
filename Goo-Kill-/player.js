@@ -5,8 +5,8 @@ class Player {
     this.playerW = playerW;
     this.playerH = playerH;
 
-    this.imageW = 800;
-    this.imageH = 200;
+    this.imageW = 8;
+    this.imageH = this.imageH;
 
     this.posX = 275;
     this.posY = 300;
@@ -20,7 +20,7 @@ class Player {
 
     this.posY0 = this.posY;
 
-    posYGround= Ground.posY
+    //this.posYGround = Ground.posY,
 
     this.salto = 400;
     this.velY = 3;
@@ -32,10 +32,21 @@ class Player {
   }
 
   draw(framesCounter) {
-    this.ctx.drawImage(this.image, (this.playerW / this.image.frames) * this.image.framesIndex, this.playerH,
+    this.ctx.drawImage(
+      this.image,
+      this.image.width / this.image.frames * this.image.framesIndex,
+      0,
+      this.image.width / this.image.frames,
+      this.image.height,
       this.posX,
       this.posY,
-      this.imageW, this.imageH);
+      this.width,
+      this.height
+    )
+    // this.ctx.drawImage(this.image, (this.playerW / this.image.frames) * this.image.framesIndex, this.playerH,
+    //   this.posX,
+    //   this.posY,
+    //   this.imageW, this.imageH);
 
     this.animate(framesCounter);
     this.jump();
@@ -51,9 +62,9 @@ class Player {
   }
   setListener() {
     document.addEventListener("keydown", (event) => {
-      if (event.keyCode == this.keys.jumpR) {
+      if (event.key = this.keys.jumpR) {
         this.jump();
-      } else if (event.keyCode == this.keys.actioG) {
+      } else if (event.key = this.keys.actioG) {
         this.kill();
       }
     });
@@ -67,6 +78,7 @@ class Player {
         this.posY = this.posY0
       }
     }
-    //kill(){}
-  } 
+  }
+  kill(){
+  }
 }
